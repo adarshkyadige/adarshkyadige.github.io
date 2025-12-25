@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Adarsh Kyadige | Applied ML & GenAI Systems" />
+  <title>Adarsh Kyadige</title>
+  <style>
+    :root{
+      --bg:#0b0f19;
+      --panel:#0f1627;
+      --text:#e7eefc;
+      --muted:#a9b7d1;
+      --accent:#7dd3fc;
+      --accent2:#a78bfa;
+      --border:rgba(255,255,255,.08);
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius:16px;
+      --max: 980px;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:var(--sans);
+      color:var(--text);
+      background:
+        radial-gradient(900px 500px at 20% -10%, rgba(125,211,252,.18), transparent 60%),
+        radial-gradient(700px 450px at 90% 10%, rgba(167,139,250,.18), transparent 55%),
+        radial-gradient(700px 450px at 30% 120%, rgba(125,211,252,.10), transparent 55%),
+        var(--bg);
+      line-height:1.55;
+    }
+    a{color:inherit}
+    .wrap{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:40px 20px 60px;
+    }
+    header{
+      display:flex;
+      gap:18px;
+      align-items:flex-start;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      padding:22px 22px 18px;
+      background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+    }
+    .name{
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+      min-width:280px;
+    }
+    h1{
+      margin:0;
+      font-size:28px;
+      letter-spacing:.2px;
+    }
+    .tagline{
+      margin:0;
+      color:var(--muted);
+      font-size:14.5px;
+      max-width:62ch;
+    }
+    .chips{
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+      margin-top:10px;
+    }
+    .chip{
+      font-size:12.5px;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.03);
+      color:var(--muted);
+      white-space:nowrap;
+    }
+    .actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:flex-end;
+    }
+    .btn{
+      display:inline-flex;
+      gap:8px;
+      align-items:center;
+      text-decoration:none;
+      font-size:13.5px;
+      padding:10px 12px;
+      border-radius:12px;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.03);
+      transition:transform .12s ease, background .12s ease, border-color .12s ease;
+    }
+    .btn:hover{
+      transform:translateY(-1px);
+      background:rgba(255,255,255,.06);
+      border-color:rgba(255,255,255,.14);
+    }
+    .btn.primary{
+      background:linear-gradient(90deg, rgba(125,211,252,.18), rgba(167,139,250,.18));
+      border-color:rgba(125,211,252,.22);
+    }
+    .grid{
+      display:grid;
+      grid-template-columns: 1.35fr .65fr;
+      gap:16px;
+      margin-top:16px;
+    }
+    @media (max-width: 860px){
+      .grid{grid-template-columns:1fr}
+    }
+    section{
+      background:rgba(255,255,255,.03);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:18px 18px 16px;
+    }
+    h2{
+      margin:0 0 10px;
+      font-size:16px;
+      letter-spacing:.3px;
+    }
+    .muted{color:var(--muted)}
+    .kicker{
+      font-family:var(--mono);
+      font-size:12px;
+      color:rgba(231,238,252,.72);
+      letter-spacing:.2px;
+    }
+    .item{
+      padding:12px 0;
+      border-top:1px solid var(--border);
+    }
+    .item:first-of-type{border-top:none; padding-top:2px}
+    .row{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+    .role{
+      font-weight:650;
+      margin:0;
+      font-size:18.5px;
+    }
+    .meta{
+      margin:2px 0 0;
+      font-size:12.8px;
+      color:var(--muted);
+    }
+    ul{
+      margin:10px 0 0 18px;
+      padding:0;
+    }
+    li{margin:6px 0; color:rgba(231,238,252,.92)}
+    .pilllist{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top:10px;
+    }
+    .pill{
+      font-size:12.5px;
+      padding:7px 10px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.03);
+      color:rgba(231,238,252,.88);
+    }
+    footer{
+      margin-top:16px;
+      padding:14px 2px 0;
+      color:rgba(169,183,209,.85);
+      font-size:12.5px;
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+    .smalllink{
+      color:rgba(125,211,252,.95);
+      text-decoration:none;
+    }
+    .smalllink:hover{text-decoration:underline}
+    .divider{
+      height:1px;
+      background:var(--border);
+      margin:10px 0 0;
+    }
+    .callout{
+      border:1px solid rgba(125,211,252,.18);
+      background:linear-gradient(180deg, rgba(125,211,252,.08), rgba(167,139,250,.05));
+      padding:12px 12px;
+      border-radius:14px;
+      margin-top:12px;
+    }
+    .callout p{margin:0; color:rgba(231,238,252,.9); font-size:13.2px}
+    .mono{font-family:var(--mono)}
+    .avatar{
+    width:96px;
+    height:96px;
+    border-radius:50%;
+    overflow:hidden;
+    flex-shrink:0;
+    border:1px solid var(--border);
+    background:linear-gradient(
+        180deg,
+        rgba(125,211,252,.18),
+        rgba(167,139,250,.18)
+    );
+    box-shadow:var(--shadow);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    }
+
+    .avatar img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+    }
+
+    /* Responsive tweak */
+    @media (max-width: 720px){
+    .avatar{
+        width:72px;
+        height:72px;
+    }
+    }
+    .fullwidth{
+    max-width: var(--max);
+    margin: 16px auto 0;
+    padding: 18px;
+    background: rgba(255,255,255,.03);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    }    
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <header>
+        <div class="avatar">
+        <!-- Replace src with your image file -->
+        <img src="avatar.jpg" alt="Photo of Adarsh Kyadige" />
+        </div>      
+        <div class="name">
+        <h1>Adarsh Kyadige</h1>
+        <p class="tagline">
+          Hello! I am a Lead Data Scientist at Sophos AI. </br>
+          
+          I enjoy building Applied ML and GenAI systems for real-world, large-scale  needle-in-a-haystack problems.</br>
+
+          I have a Master's degree in Computer Science with a specialization in AI and Machine Learning from UC San Diego.</br>
+
+          My current research interests are AI Security, Large-scale ML based detection of malicious and anomalous artifacts, and AI based SOC tooling.</br>
+        </p>
+
+        <div class="chips" aria-label="Key focus areas">
+          <span class="chip">Applied ML</span>
+          <span class="chip">GenAI / LLM Systems</span>
+          <span class="chip">Malicious Artifact Detection</span>
+          <span class="chip">AI Security Research</span>
+          <span class="chip">People Leadership</span>
+        </div>
+
+        <div class="callout">
+          <p>
+            <span class="mono">Currently:</span> Lead Data Scientist at Sophos AI (Denver / Remote). </br>
+            Managed ML/AI portfolio, led research strategy, built GenAI powered tools for the business, and mentored Data Scientists.
+          </p>
+        </div>
+      </div>
+
+      <div class="actions">
+        <!-- Replace href values with your real links -->
+        <a class="btn primary" href="mailto:adarshkyadige@proton.me">✉️ Email</a>
+        <a class="btn" href="https://www.linkedin.com/in/adarshkyadige" target="_blank" rel="noopener noreferrer">in LinkedIn</a>
+        <a class="btn" href="https://adarshkyadige.com" target="_blank" rel="noopener noreferrer">🌐 Website</a>
+        <a class="btn" href="./Resume_Adarsh_Kyadige_Lead.pdf" target="_blank" rel="noopener noreferrer">📄 Resume PDF</a>
+      </div>
+    </header>
+
+    <section class="fullwidth">
+    <div class="item">
+        <h1>Ongoing Projects</h1>
+    </div>
+
+    <div class="item">
+        <div class="row">
+        <div>
+            <p class="role">AI Security: Protecting Agentic AI solutions by modeling prompt intent and relevance</p>
+            <p class="meta">Primary Researcher</p>
+        </div>
+        <div class="kicker">Jailbreak Defense · Large Language Model Security · LLM Scoping · Prompt categorization</div>
+        <p>
+          In this work, we focused on designing systems that determine when an LLM should be used and how it should be constrained before generation begins. 
+          By categorizing user prompts and enforcing scope boundaries upstream, we reduced policy violations, irrelevant model behavior, and unintended data exposure, treating prompt understanding as a security and reliability problem rather than a pure NLP task. 
+          This approach reframes LLMs as components in a larger decision system, where controlled invocation is as important as model capability.       
+        </p>
+        </div>
+        <div class="pilllist">
+        </div>
+    </div>
+
+    <div class="item">
+        <h1>Past Projects</h1>
+    </div>
+
+    <div class="item">
+        <div class="row">
+        <div>
+            <p class="role">AI Security: Detecting LLM Backdoors, LLM Salting to protect against Jailbreaks</p>
+            <p class="meta">Collaborator</p>
+        </div>
+        <div class="kicker">AI Red Teaming · Jailbreak Defense · Large Language Models</div>
+        <p>
+            Detecting Backdoors in White-Box LLMs</br>
+            We studied how jailbreaks and hidden backdoors manifest inside trained language models by deliberately introducing new backdoors and identifying shared neuron activations across independent attacks. 
+            This work was presented at CAMLIS 2024. 
+            </br></br>
+            LLM Salting: Making Jailbreaks Non-Transferable</br>
+            We explored a defense strategy that breaks reuse of precomputed jailbreaks by rotating an LLM’s refusal direction, rendering existing prompts unreliable without retraining the model. 
+            This work was presented at CAMLIS 2025.
+        </p>
+        </div>
+        <div class="pilllist">
+        <a class="pill" href="https://youtu.be/CXYZWplLIFE?si=ay8bDJsX6rHz7jqv" target="_blank" rel="noopener noreferrer">CAMLIS 2024 Presentation</a>
+        <a class="pill" href="https://youtu.be/cqqUzsXIdPg?si=KJmUubwLr5ZaVDSU" target="_blank" rel="noopener noreferrer">CAMLIS 2025 Presentation</a>
+        </div>
+    </div>
+
+    <div class="item">
+        <div class="row">
+        <div>
+            <p class="role">Book Chapter: Phishing and Social Engineering in the age of LLMs</p>
+            <p class="meta">Collaborator</p>
+        </div>
+        <div class="kicker">AI Red Teaming · Automated attacks · Large Language Models</div>
+        </div>
+        <p>
+        In this work, we explored how large language models fundamentally change phishing and social engineering by enabling massive microtargeting at negligible cost. 
+        By combining synthetic user profiles with AI-generated campaign content, we demonstrated how LLMs can selectively fabricate claims, omit inconvenient facts, or tailor persuasive narratives to individuals who are most likely to agree, allowing misinformation and fraud to scale far beyond traditional bulk campaigns. 
+        This shifts social engineering from broad messaging to highly personalized influence, introducing new risks for political misinformation, scams, and societal polarization.
+        </p>
+        <div class="pilllist">
+        <a class="pill" href="https://www.sophos.com/en-us/blog/political-manipulation-with-massive-ai-model-driven-misinformation-and-microtargeting" target="_blank" rel="noopener noreferrer">Sophos X-Ops Blog Post</a>
+        <a class="pill" href="https://link.springer.com/chapter/10.1007/978-3-031-54827-7_8" target="_blank" rel="noopener noreferrer">Chapter</a>
+        <a class="pill" href="https://www.youtube.com/watch?v=vdKMfuc7YVQ" target="_blank" rel="noopener noreferrer">Presentation</a>
+        </div>
+    </div>
+
+    <div class="item">
+        <div class="row">
+        <div>
+            <p class="role">LLM Benchmarking and Evaluation for use in Cybersecurity</p>
+            <p class="meta">Collaborator</p>
+        </div>
+        <div class="kicker">AI Security Operations Center · Large Language Models</div>
+        </div>
+        <p>
+        In this work, we evaluated how large language models can augment real security-operations workflows by measuring their performance on practical tasks such as translating analyst intent into structured queries, prioritizing incidents by severity, and summarizing complex security events. 
+        Rather than treating LLMs as general assistants, we focused on where they meaningfully reduce analyst effort and where their limitations introduce risk, comparing out-of-the-box behavior of several black box and open source models. 
+        This work was presented at CAMLIS 2023.
+        </p>
+        <div class="pilllist">
+        <a class="pill" href="https://www.sophos.com/en-us/blog/benchmarking-the-security-capabilities-of-large-language-models" target="_blank" rel="noopener noreferrer">Sophos X-Ops Blog Post</a>
+        <a class="pill" href="https://aws.amazon.com/blogs/machine-learning/using-llms-to-fortify-cyber-defenses-sophoss-insight-on-strategies-for-using-llms-with-amazon-bedrock-and-amazon-sagemaker/" target="_blank" rel="noopener noreferrer">AWS Blog Post</a>
+        <a class="pill" href="https://youtu.be/8uxDMu7iMPo?si=o95s8-PrTRnXFAfN" target="_blank" rel="noopener noreferrer">Presentation</a>
+        </div>
+    </div>
+    
+    <div class="item">
+        <div class="row">
+        <div>
+            <p class="role">Living Off The Land Binary (LOLBin) Attack Detection</p>
+            <p class="meta">Primary Researcher</p>
+        </div>
+        <div class="kicker">Large Scale Data · Command Line Detection · Needle-in-a-haystack</div>
+        </div>
+        <p>
+        In this work we tackled the stealthiest class of adversarial behavior where attackers leverage legitimate system tools instead of traditional malware to evade detection. 
+        We developed machine-learning methods designed for noisy, highly imbalanced system telemetry, focusing on hands-on-keyboard command line executions that distinguish benign use of native tools from malicious abuse. 
+        We focused on building a system that enables scalable detection across millions of endpoints where classic signature-based methods fail due to the lack of explicit malicious artifacts.
+        This research was presented at BSides Las Vegas in 2022.
+        </p>
+        <div class="pilllist">
+        <a class="pill" href="https://www.youtube.com/watch?v=u5-vq32GVec" target="_blank" rel="noopener noreferrer">Presentation</a>
+        <a class="pill" href="https://patents.google.com/patent/US12375520B2/en" target="_blank" rel="noopener noreferrer">Patent</a>
+        </div>
+    </div>
+
+    <div class="item">
+        <div class="row">
+        <div>
+            <p class="role">Multi-View Deep Learning for Malware Detection: Using filepaths as additional context</p>
+            <p class="meta">Primary Researcher</p>
+        </div>
+        <div class="kicker">Deep Learning · Neural Networks · Portable Executable Detection</div>
+        </div>
+        <p>
+        In this project, we worked on improving large-scale malware detection by incorporating context alongside file content. 
+        Traditional static ML detectors focus almost entirely on features extracted from a file itself, but we showed that auxiliary signals like a file’s location on disk can meaningfully change how suspicious it should appear. 
+        We designed a multi-view deep learning architecture that jointly models PE file features and file-path context, evaluated on ~10 million real endpoint samples. The combined model significantly improved detection performance in low false-positive regimes where operational cost matters most, while remaining deployable at production throughput. 
+        We also used interpretability techniques (LIME) to verify that the model learned sensible, human-interpretable patterns rather than spurious correlations, reinforcing trust in its real-world use.
+        This research was presented at the 2020 IEEE S&P DLS workshop.
+        </p>
+        <div class="pilllist">
+        <a class="pill" href="#" target="_blank" rel="noopener noreferrer">Paper</a>
+        <a class="pill" href="#" target="_blank" rel="noopener noreferrer">Presentation</a>
+        </div>
+    </div>
+
+    </section>
+
+    <footer>
+      <div>© <span id="y"></span> Adarsh Kyadige</div>
+      <div class="muted">
+        Built for GitHub Pages ·
+        <a class="smalllink" href="https://pages.github.com/" target="_blank" rel="noopener noreferrer">GitHub Pages</a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
