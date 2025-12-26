@@ -59,7 +59,7 @@
     }
     h1{
       margin:0;
-      font-size:28px;
+      font-size:34px;
       letter-spacing:.2px;
     }
     .tagline{
@@ -87,7 +87,7 @@
       display:flex;
       gap:10px;
       flex-wrap:wrap;
-      align-items:center;
+      align-items:left;
       justify-content:flex-end;
     }
     .btn{
@@ -129,7 +129,7 @@
     }
     h2{
       margin:0 0 10px;
-      font-size:16px;
+      font-size:28px;
       letter-spacing:.3px;
     }
     .muted{color:var(--muted)}
@@ -237,8 +237,8 @@
     /* Responsive tweak */
     @media (max-width: 720px){
     .avatar{
-        width:72px;
-        height:72px;
+        width:120px;
+        height:120px;
     }
     }
     .fullwidth{
@@ -258,9 +258,8 @@
 
     <header>
         <div class="avatar">
-        <!-- Replace src with your image file -->
         <img src="avatar.jpg" alt="Photo of Adarsh Kyadige" />
-        </div>      
+        </div>  
         <div class="name">
         <h1>Adarsh Kyadige</h1>
         <p class="tagline">
@@ -291,30 +290,29 @@
 
       <div class="actions">
         <!-- Replace href values with your real links -->
-        <a class="btn primary" href="mailto:adarshkyadige@proton.me">✉️ Email</a>
-        <a class="btn" href="https://www.linkedin.com/in/adarshkyadige" target="_blank" rel="noopener noreferrer">in LinkedIn</a>
-        <a class="btn" href="https://adarshkyadige.com" target="_blank" rel="noopener noreferrer">🌐 Website</a>
+        <a class="btn primary" href="mailto:adarshkyadige@proton.me">Email</a>
+        <a class="btn" href="https://www.linkedin.com/in/adarshkyadige" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a class="btn" href="https://github.com/adarshkyadige" target="_blank" rel="noopener noreferrer">GitHub</a>
 <!--        <a class="btn" href="./Resume_Adarsh_Kyadige_Lead.pdf" target="_blank" rel="noopener noreferrer">📄 Resume PDF</a> -->
       </div>
     </header>
 
     <section class="fullwidth">
     <div class="item">
-        <h1>Ongoing Projects</h1>
+        <h2>Ongoing Projects</h2>
     </div>
 
     <div class="item">
         <div class="row">
         <div>
             <p class="role">Natural Language Playbook Authoring and Configuration</p>
-            <p class="meta">Primary Researcher / Developer</p>
+            <p class="meta">Lead Researcher / Developer</p>
         </div>
-        <div class="kicker">Large Language Models · AI SOC tooling · Natural Language to Code</div>
+        <div class="pilllist">
+        </div>
         <p>
           In this project, we're exploring how natural language can be used to safely author and configure structured security playbooks within the Taegis platform.
         </p>
-        </div>
-        <div class="pilllist">
         </div>
     </div>
 
@@ -322,14 +320,13 @@
         <div class="row">
         <div>
             <p class="role">Automated Log Analysis for Network and Endpoint product support</p>
-            <p class="meta">Primary Researcher</p>
+            <p class="meta">Lead Researcher</p>
         </div>
-        <div class="kicker">Large Language Models · GenAI tooling · Agentic AI </div>
+        <div class="pilllist">
+        </div>
         <p>
           This project focused on using Large Language Models to analyze large volumes of endpoint and network logs in order to assist product support engineers. 
           The system surfaces likely failure modes, highlights anomalous behavior, and suggests plausible remediation steps, helping engineers move from symptoms to actionable hypotheses more quickly while remaining in control of final decisions.        </p>
-        </div>
-        <div class="pilllist">
         </div>
     </div>
     
@@ -337,21 +334,21 @@
         <div class="row">
         <div>
             <p class="role">AI Security: Protecting Agentic AI solutions by modeling prompt intent and relevance</p>
-            <p class="meta">Primary Researcher</p>
+            <p class="meta">Lead Researcher</p>
         </div>
-        <div class="kicker">Jailbreak Defense · Large Language Model Security · LLM Scoping · Prompt categorization</div>
+        <div class="pilllist">
+        </div>
         <p>
           In this work, we focused on designing systems that determine when an LLM should be used and how it should be constrained before generation begins. 
           By categorizing user prompts and enforcing scope boundaries upstream, we reduced policy violations, irrelevant model behavior, and unintended data exposure, treating prompt understanding as a security and reliability problem rather than a pure NLP task. 
           This approach reframes LLMs as components in a larger decision system, where controlled invocation is as important as model capability.       
         </p>
         </div>
-        <div class="pilllist">
-        </div>
     </div>
-
+    </section>
+    <section class="fullwidth">
     <div class="item">
-        <h1>Past Projects</h1>
+        <h2>Past Projects</h2>
     </div>
 
     <div class="item">
@@ -360,7 +357,10 @@
             <p class="role">AI Security: Detecting LLM Backdoors, LLM Salting to protect against Jailbreaks</p>
             <p class="meta">Collaborator</p>
         </div>
-        <div class="kicker">AI Red Teaming · Jailbreak Defense · Large Language Models</div>
+        </div>
+        <div class="pilllist">
+        <a class="pill" href="https://youtu.be/CXYZWplLIFE?si=ay8bDJsX6rHz7jqv" target="_blank" rel="noopener noreferrer">CAMLIS 2024 Presentation</a>
+        <a class="pill" href="https://youtu.be/cqqUzsXIdPg?si=KJmUubwLr5ZaVDSU" target="_blank" rel="noopener noreferrer">CAMLIS 2025 Presentation</a>
         <p>
             Detecting Backdoors in White-Box LLMs</br>
             We studied how jailbreaks and hidden backdoors manifest inside trained language models by deliberately introducing new backdoors and identifying shared neuron activations across independent attacks. 
@@ -371,10 +371,6 @@
             This work was presented at CAMLIS 2025.
         </p>
         </div>
-        <div class="pilllist">
-        <a class="pill" href="https://youtu.be/CXYZWplLIFE?si=ay8bDJsX6rHz7jqv" target="_blank" rel="noopener noreferrer">CAMLIS 2024 Presentation</a>
-        <a class="pill" href="https://youtu.be/cqqUzsXIdPg?si=KJmUubwLr5ZaVDSU" target="_blank" rel="noopener noreferrer">CAMLIS 2025 Presentation</a>
-        </div>
     </div>
 
     <div class="item">
@@ -383,18 +379,17 @@
             <p class="role">Book Chapter: Phishing and Social Engineering in the age of LLMs</p>
             <p class="meta">Collaborator</p>
         </div>
-        <div class="kicker">AI Red Teaming · Automated attacks · Large Language Models</div>
+        </div>
+        <div class="pilllist">
+        <a class="pill" href="https://www.sophos.com/en-us/blog/political-manipulation-with-massive-ai-model-driven-misinformation-and-microtargeting" target="_blank" rel="noopener noreferrer">Sophos X-Ops Blog Post</a>
+        <a class="pill" href="https://link.springer.com/chapter/10.1007/978-3-031-54827-7_8" target="_blank" rel="noopener noreferrer">Chapter</a>
+        <a class="pill" href="https://www.youtube.com/watch?v=vdKMfuc7YVQ" target="_blank" rel="noopener noreferrer">Presentation</a>
         </div>
         <p>
         In this work, we explored how large language models fundamentally change phishing and social engineering by enabling massive microtargeting at negligible cost. 
         By combining synthetic user profiles with AI-generated campaign content, we demonstrated how LLMs can selectively fabricate claims, omit inconvenient facts, or tailor persuasive narratives to individuals who are most likely to agree, allowing misinformation and fraud to scale far beyond traditional bulk campaigns. 
         This shifts social engineering from broad messaging to highly personalized influence, introducing new risks for political misinformation, scams, and societal polarization.
         </p>
-        <div class="pilllist">
-        <a class="pill" href="https://www.sophos.com/en-us/blog/political-manipulation-with-massive-ai-model-driven-misinformation-and-microtargeting" target="_blank" rel="noopener noreferrer">Sophos X-Ops Blog Post</a>
-        <a class="pill" href="https://link.springer.com/chapter/10.1007/978-3-031-54827-7_8" target="_blank" rel="noopener noreferrer">Chapter</a>
-        <a class="pill" href="https://www.youtube.com/watch?v=vdKMfuc7YVQ" target="_blank" rel="noopener noreferrer">Presentation</a>
-        </div>
     </div>
 
     <div class="item">
@@ -403,18 +398,17 @@
             <p class="role">LLM Benchmarking and Evaluation for use in Cybersecurity</p>
             <p class="meta">Collaborator</p>
         </div>
-        <div class="kicker">AI Security Operations Center · Large Language Models</div>
+        </div>
+        <div class="pilllist">
+        <a class="pill" href="https://www.sophos.com/en-us/blog/benchmarking-the-security-capabilities-of-large-language-models" target="_blank" rel="noopener noreferrer">Sophos X-Ops Blog Post</a>
+        <a class="pill" href="https://aws.amazon.com/blogs/machine-learning/using-llms-to-fortify-cyber-defenses-sophoss-insight-on-strategies-for-using-llms-with-amazon-bedrock-and-amazon-sagemaker/" target="_blank" rel="noopener noreferrer">AWS Blog Post</a>
+        <a class="pill" href="https://youtu.be/8uxDMu7iMPo?si=o95s8-PrTRnXFAfN" target="_blank" rel="noopener noreferrer">Presentation</a>
         </div>
         <p>
         In this work, we evaluated how large language models can augment real security-operations workflows by measuring their performance on practical tasks such as translating analyst intent into structured queries, prioritizing incidents by severity, and summarizing complex security events. 
         Rather than treating LLMs as general assistants, we focused on where they meaningfully reduce analyst effort and where their limitations introduce risk, comparing out-of-the-box behavior of several black box and open source models. 
         This work was presented at CAMLIS 2023.
         </p>
-        <div class="pilllist">
-        <a class="pill" href="https://www.sophos.com/en-us/blog/benchmarking-the-security-capabilities-of-large-language-models" target="_blank" rel="noopener noreferrer">Sophos X-Ops Blog Post</a>
-        <a class="pill" href="https://aws.amazon.com/blogs/machine-learning/using-llms-to-fortify-cyber-defenses-sophoss-insight-on-strategies-for-using-llms-with-amazon-bedrock-and-amazon-sagemaker/" target="_blank" rel="noopener noreferrer">AWS Blog Post</a>
-        <a class="pill" href="https://youtu.be/8uxDMu7iMPo?si=o95s8-PrTRnXFAfN" target="_blank" rel="noopener noreferrer">Presentation</a>
-        </div>
     </div>
     
     <div class="item">
@@ -423,7 +417,10 @@
             <p class="role">Living Off The Land Binary (LOLBin) Attack Detection</p>
             <p class="meta">Primary Researcher</p>
         </div>
-        <div class="kicker">Large Scale Data · Command Line Detection · Needle-in-a-haystack</div>
+        </div>
+        <div class="pilllist">
+        <a class="pill" href="https://www.youtube.com/watch?v=u5-vq32GVec" target="_blank" rel="noopener noreferrer">Presentation</a>
+        <a class="pill" href="https://patents.google.com/patent/US12375520B2/en" target="_blank" rel="noopener noreferrer">Patent</a>
         </div>
         <p>
         In this work we tackled the stealthiest class of adversarial behavior where attackers leverage legitimate system tools instead of traditional malware to evade detection. 
@@ -431,10 +428,6 @@
         We focused on building a system that enables scalable detection across millions of endpoints where classic signature-based methods fail due to the lack of explicit malicious artifacts.
         This research was presented at BSides Las Vegas in 2022.
         </p>
-        <div class="pilllist">
-        <a class="pill" href="https://www.youtube.com/watch?v=u5-vq32GVec" target="_blank" rel="noopener noreferrer">Presentation</a>
-        <a class="pill" href="https://patents.google.com/patent/US12375520B2/en" target="_blank" rel="noopener noreferrer">Patent</a>
-        </div>
     </div>
 
     <div class="item">
@@ -443,7 +436,10 @@
             <p class="role">Multi-View Deep Learning for Malware Detection: Using filepaths as additional context</p>
             <p class="meta">Primary Researcher</p>
         </div>
-        <div class="kicker">Deep Learning · Neural Networks · Portable Executable Detection</div>
+        </div>
+        <div class="pilllist">
+        <a class="pill" href="#" target="_blank" rel="noopener noreferrer">Paper</a>
+        <a class="pill" href="#" target="_blank" rel="noopener noreferrer">Presentation</a>
         </div>
         <p>
         In this project, we worked on improving large-scale malware detection by incorporating context alongside file content. 
@@ -452,10 +448,6 @@
         We also used interpretability techniques (LIME) to verify that the model learned sensible, human-interpretable patterns rather than spurious correlations, reinforcing trust in its real-world use.
         This research was presented at the 2020 IEEE S&P DLS workshop.
         </p>
-        <div class="pilllist">
-        <a class="pill" href="#" target="_blank" rel="noopener noreferrer">Paper</a>
-        <a class="pill" href="#" target="_blank" rel="noopener noreferrer">Presentation</a>
-        </div>
     </div>
 
     </section>
